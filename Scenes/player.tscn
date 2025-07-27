@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://vgfjb3roo1xx"]
+[gd_scene load_steps=3 format=3 uid="uid://vgfjb3roo1xx"]
 
 [ext_resource type="Script" uid="uid://dksjspef8lcpa" path="res://Script/player.gd" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://bf2uuxkq48ens" path="res://Assets/littleGuy.png" id="2_cvnsp"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_v0iea")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cvnsp")
