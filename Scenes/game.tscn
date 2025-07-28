@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d35tfankmdvid"]
+[gd_scene load_steps=8 format=3 uid="uid://d35tfankmdvid"]
 
 [ext_resource type="PackedScene" uid="uid://vgfjb3roo1xx" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://buycd6cn8vue8" path="res://Assets/shrinkingFileSet.png" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://b1euqaul874pa" path="res://Scenes/enemy.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://bk60jl5jf8yif" path="res://Scenes/shrinkzone.tscn" id="4_3dryh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("1_qxrlw")
@@ -105,7 +106,8 @@ texture = ExtResource("1_qxrlw")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_wrm1d")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wowpa"]
+size = Vector2(39, 36)
 
 [node name="Game" type="Node2D"]
 
@@ -120,11 +122,11 @@ position = Vector2(2, -39)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(30, 4)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_qxrlw")
-
 [node name="Enemy" parent="." instance=ExtResource("3_wrm1d")]
 position = Vector2(-76, -8)
+
+[node name="shrinkzone" parent="." instance=ExtResource("4_3dryh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shrinkzone"]
+position = Vector2(94.5, -34)
+shape = SubResource("RectangleShape2D_wowpa")

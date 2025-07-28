@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://v755nlkwsbs5" path="res://Script/enemy.gd" id="1_afpow"]
 [ext_resource type="Texture2D" uid="uid://b3gmm8u7ufy2b" path="res://Assets/slime.png" id="1_hghv2"]
-[ext_resource type="PackedScene" uid="uid://dedp7gs35pv3v" path="res://Scenes/killzone.tscn" id="2_1f0kj"]
+[ext_resource type="PackedScene" uid="uid://bk60jl5jf8yif" path="res://Scenes/shrinkzone.tscn" id="3_afpow"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1f0kj"]
 atlas = ExtResource("1_hghv2")
@@ -19,7 +19,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_afpow"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_287tu"]
 radius = 8.0
 
 [node name="Enemy" type="Node2D"]
@@ -29,11 +29,11 @@ script = ExtResource("1_afpow")
 sprite_frames = SubResource("SpriteFrames_afpow")
 autoplay = "default"
 
-[node name="Killzone" parent="." instance=ExtResource("2_1f0kj")]
+[node name="shrinkzone" parent="." instance=ExtResource("3_afpow")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shrinkzone"]
 position = Vector2(-1, -1)
-shape = SubResource("CircleShape2D_afpow")
+shape = SubResource("CircleShape2D_287tu")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 target_position = Vector2(12, 0)

@@ -1,7 +1,11 @@
 extends Area2D
 
-@onready var player: CharacterBody2D = $"."
 
 
-func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	pass
+
+
+
+func _on_body_entered(body: Node2D) -> void:
+	print(AutoLoadedScript.SIZE)
+	AutoLoadedScript.SIZE -= 0.1
+	print(AutoLoadedScript.SIZE)

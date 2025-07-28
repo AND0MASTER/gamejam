@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bx72iujujcqgj" path="res://Script/shrinkzone.gd" id="1_b2cyf"]
 
 [node name="shrinkzone" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_b2cyf")
 
 [connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
