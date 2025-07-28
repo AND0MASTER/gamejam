@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk60jl5jf8yif"]
+
+[ext_resource type="Script" uid="uid://bx72iujujcqgj" path="res://Script/shrinkzone.gd" id="1_b2cyf"]
+
+[node name="shrinkzone" type="Area2D"]
+script = ExtResource("1_b2cyf")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
