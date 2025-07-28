@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://d35tfankmdvid"]
+
+[ext_resource type="Texture2D" uid="uid://buycd6cn8vue8" path="res://Assets/shrinkingFileSet.png" id="1_ctfw7"]
+[ext_resource type="PackedScene" uid="uid://vgfjb3roo1xx" path="res://Scenes/player.tscn" id="2_jcwey"]
+[ext_resource type="PackedScene" uid="uid://b1euqaul874pa" path="res://Scenes/enemy.tscn" id="3_t7bpg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
+texture = ExtResource("1_ctfw7")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.9869, -15.996, 16.052, -15.9967, 16.1323, 16.0464, -16.0078, 15.9967)
+0:0/0/physics_layer_0/polygon_0/one_way_margin = 2.0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+2:2/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+4:1/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+7:2/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+6:3/0 = 0
+6:2/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+5:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3dryh"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_wrm1d")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
+
+[node name="levelTesting" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = SubResource("TileSet_3dryh")
+rendering_quadrant_size = 32
+format = 2
+layer_0/name = "Back"
+layer_0/tile_data = PackedInt32Array(65557, 458752, 3, 65559, 458752, 3, 65561, 458752, 3, -65511, 458752, 3, -65513, 458752, 3, -65515, 458752, 3, -196583, 458752, 2, -196585, 458752, 2, -196587, 458752, 2, 65555, 393216, 3, -65517, 393216, 3, -196589, 393216, 2, -196581, 393216, 268435458, 65563, 393216, 268435459, -65509, 393216, 268435459, 65570, 458752, 3, -65502, 458752, 3, 65572, 458752, 3, -65500, 458752, 3, 65574, 458752, 3, -65498, 458752, 3, 65576, 393216, 268435459, -65496, 393216, 268435459, -196574, 458752, 2, -196572, 458752, 2, -196570, 458752, 2, -65504, 524288, 268435459, 458772, 262144, 2, 327700, 262144, 2, 458775, 262144, 2, 327703, 262144, 2, 458778, 262144, 2, 327706, 262144, 2)
+layer_1/name = "Decor"
+layer_1/tile_data = PackedInt32Array(21, 65536, 5, 25, 65536, 6, 458762, 262144, 3, 327690, 262144, 2, 196618, 262144, 2, 65546, 262144, 1, 458766, 327680, 7, 458772, 262144, 6, 458775, 327680, 6, 458778, 393216, 6, 34, 131072, 6, 38, 196608, 6, -131034, 196608, 5, -131038, 131072, 5, 196638, 393216, 4, 65558, 458752, 4, 65562, 524288, 4, 65576, 458752, 4)
+layer_2/name = "Blocks"
+layer_2/tile_data = PackedInt32Array(589836, 65536, 1, 589838, 65536, 1, 589834, 65536, 1, 720906, 0, 1, 720908, 0, 1, 720910, 0, 1, 851982, 0, 2, 851980, 0, 2, 851978, 0, 2, 851976, 0, 2, 720904, 0, 1, 589832, 0, 1, 458760, 0, 1, 327688, 0, 1, 196616, 0, 1, 65544, 0, 0, 589844, 65536, 1, 720916, 0, 1, 720918, 0, 1, 720920, 0, 1, 720922, 0, 1, 589846, 65536, 1, 589848, 65536, 1, 589850, 65536, 1, 851988, 0, 2, 851990, 0, 2, 851992, 0, 2, 851994, 0, 2, 196628, 65536, 1, 196630, 65536, 1, 196632, 65536, 1, 196634, 65536, 1, 589852, 65536, 1, 327710, 65536, 1, 458782, 0, 1, 589854, 0, 1, 720924, 0, 1, 720926, 0, 1, 851996, 0, 2, 851998, 0, 2, 196642, 65536, 1, 196644, 65536, 1, 196646, 65536, 1, 196648, 65536, 1, 327712, 0, 1, 327714, 0, 1, 327716, 0, 1, 327718, 0, 1, 327720, 0, 1, 458792, 0, 1, 458790, 0, 1, 458788, 0, 1, 458786, 0, 1, 458784, 0, 1, 589856, 0, 1, 589858, 0, 1, 589860, 0, 1, 589862, 0, 1, 589864, 0, 1, 720936, 0, 1, 720934, 0, 1, 720932, 0, 1, 720930, 0, 1, 720928, 0, 1, 852000, 0, 2, 852002, 0, 2, 852004, 0, 2, 852006, 0, 2, 852008, 0, 2, 65578, 0, 1, -65494, 0, 1, -196566, 0, 1, 196650, 0, 1, 327722, 0, 1, 458794, 0, 1, 589866, 0, 1, 720938, 0, 1, 852010, 0, 2, 65568, 65536, 1, 196640, 0, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_jcwey")]
+position = Vector2(200, 120)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1, 0)
+zoom = Vector2(2, 2)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(30, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(161, 228)
+shape = SubResource("WorldBoundaryShape2D_qxrlw")
+
+[node name="Enemy" parent="." instance=ExtResource("3_t7bpg")]
+position = Vector2(600, 34)
