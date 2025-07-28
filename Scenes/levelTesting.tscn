@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d35tfankmdvid"]
+[gd_scene load_steps=7 format=3 uid="uid://ch2dvs4s14fyl"]
 
 [ext_resource type="Texture2D" uid="uid://buycd6cn8vue8" path="res://Assets/shrinkingFileSet.png" id="1_ctfw7"]
 [ext_resource type="PackedScene" uid="uid://vgfjb3roo1xx" path="res://Scenes/player.tscn" id="2_jcwey"]
