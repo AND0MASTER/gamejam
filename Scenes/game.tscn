@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d35tfankmdvid"]
+[gd_scene load_steps=10 format=3 uid="uid://d35tfankmdvid"]
 
 [ext_resource type="PackedScene" uid="uid://vgfjb3roo1xx" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://buycd6cn8vue8" path="res://Assets/shrinkingFileSet.png" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://b1euqaul874pa" path="res://Scenes/enemy.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://bk60jl5jf8yif" path="res://Scenes/shrinkzone.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://dod54sb0340cf" path="res://Scenes/trampolina.tscn" id="5_wowpa"]
+[ext_resource type="PackedScene" uid="uid://c5xwwk6q6bf78" path="res://Scenes/push_box.tscn" id="6_i6g32"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("1_qxrlw")
@@ -135,4 +136,7 @@ position = Vector2(94.5, -34)
 shape = SubResource("RectangleShape2D_wowpa")
 
 [node name="trampolina" parent="." instance=ExtResource("5_wowpa")]
-position = Vector2(32, -21)
+position = Vector2(-145, -22)
+
+[node name="pushBox" parent="." instance=ExtResource("6_i6g32")]
+position = Vector2(46, -41)

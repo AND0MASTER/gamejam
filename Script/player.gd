@@ -38,7 +38,11 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		animated_sprite_2d.flip_h = true
 		ray_cast_wall.scale.x = -1
-	
+		
+	if direction == 0:
+		animated_sprite_2d.play("Idle")
+	else:
+		animated_sprite_2d.play("Walk")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
