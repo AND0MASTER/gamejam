@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dod54sb0340cf"]
+
+[ext_resource type="Texture2D" uid="uid://bofiae2glm2e2" path="res://Assets/trampoline.png" id="1_4ehev"]
+[ext_resource type="Script" uid="uid://xbk3lydtuqcl" path="res://Script/trampolina.gd" id="1_u6wts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ehev"]
+size = Vector2(30, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6wts"]
+size = Vector2(24, 5)
+
+[node name="trampolina" type="Node2D"]
+script = ExtResource("1_u6wts")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_4ehev")
+region_enabled = true
+region_rect = Rect2(0, 20.1323, 32, 11.8677)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_4ehev")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_u6wts")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

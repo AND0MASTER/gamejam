@@ -7,11 +7,12 @@ const JUMP_VELOCITY = -350
 @onready var ray_cast_small: RayCast2D = $RayCastSmall
 @onready var ray_cast_wall: RayCast2D = $RayCastWall
 
-func _process(delta: float) -> void:
-	scale.x = AutoLoadedScript.SIZE
-	scale.y = AutoLoadedScript.SIZE
+
 	
 func _physics_process(delta: float) -> void:
+	#SIZE
+	scale.x = AutoLoadedScript.SIZE
+	scale.y = AutoLoadedScript.SIZE
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -42,7 +43,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
+	#Climbing
 	if ray_cast_wall.is_colliding() && AutoLoadedScript.climbing == true:
 		velocity.y = -50
 
