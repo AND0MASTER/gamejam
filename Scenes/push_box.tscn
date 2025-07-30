@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://cknp80mwwva0"]
+
+[ext_resource type="Script" uid="uid://byp54rmhedfug" path="res://Script/push_box.gd" id="1_g1quh"]
+[ext_resource type="Texture2D" uid="uid://bjrpujplkjtib" path="res://Assets/box.png" id="2_hp6ph"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ld0s"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfgog"]
+size = Vector2(6, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1t8b"]
+size = Vector2(8.5, 26)
+
+[node name="pushBox" type="Node2D"]
+script = ExtResource("1_g1quh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hp6ph")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_5ld0s")
+
+[node name="AreaRight" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRight"]
+position = Vector2(15, 2)
+shape = SubResource("RectangleShape2D_nfgog")
+
+[node name="Area2Left" type="Area2D" parent="."]
+position = Vector2(1, 0)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Left"]
+position = Vector2(-15.25, 3)
+shape = SubResource("RectangleShape2D_h1t8b")
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-13, 0)
+target_position = Vector2(0, 16)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(13, 0)
+target_position = Vector2(0, 16)
+
+[node name="RayCastCloRight" type="RayCast2D" parent="."]
+position = Vector2(0, -12)
+target_position = Vector2(16, 0)
+
+[node name="RayCastCloRight2" type="RayCast2D" parent="."]
+position = Vector2(0, 12)
+target_position = Vector2(16, 0)
+
+[node name="RayCastCloLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -12)
+target_position = Vector2(-16, 0)
+
+[node name="RayCastCloLeft2" type="RayCast2D" parent="."]
+position = Vector2(0, 12)
+target_position = Vector2(-16, 0)
+
+[connection signal="body_entered" from="AreaRight" to="." method="_on_area_right_body_entered"]
+[connection signal="body_shape_entered" from="AreaRight" to="." method="_on_area_right_body_shape_entered"]
+[connection signal="body_entered" from="Area2Left" to="." method="_on_area_2_left_body_entered"]

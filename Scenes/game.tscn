@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d35tfankmdvid"]
+[gd_scene load_steps=12 format=3 uid="uid://d35tfankmdvid"]
 
 [ext_resource type="PackedScene" uid="uid://vgfjb3roo1xx" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://buycd6cn8vue8" path="res://Assets/shrinkingFileSet.png" id="1_qxrlw"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dod54sb0340cf" path="res://Scenes/trampolina.tscn" id="5_wowpa"]
 [ext_resource type="PackedScene" uid="uid://cwf5iilqana32" path="res://Scenes/spike.tscn" id="6_i6g32"]
 [ext_resource type="PackedScene" uid="uid://ctvepsm4qbnfr" path="res://Scenes/door.tscn" id="7_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://cknp80mwwva0" path="res://Scenes/push_box.tscn" id="8_v158k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("1_qxrlw")
@@ -119,7 +120,7 @@ size = Vector2(39, 36)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3dryh")
 format = 2
-layer_0/tile_data = PackedInt32Array(-1, 0, 1, -65536, 0, 1, -65535, 0, 1, -65534, 0, 1, -65533, 0, 1, -65532, 0, 1, -65531, 0, 1, -65530, 0, 1, -65529, 0, 1, -196601, 0, 1, -262137, 0, 1, -327673, 0, 1, -393209, 0, 1, -262136, 0, 1, -393208, 0, 1, -458745, 0, 1, -524280, 0, 1, -524281, 0, 1, -589817, 0, 1, 6, 0, 1, 7, 0, 1, 8, 0, 1, 9, 0, 1, -65528, 0, 3, -65527, 0, 3, -65526, 0, 3, -65525, 0, 3, -196600, 131072, 3, -196599, 131072, 3, -196598, 131072, 3, -196597, 131072, 3, -196596, 131072, 3, -8, 0, 2, 65528, 0, 2, 65529, 0, 2, 65530, 0, 2, 65531, 0, 2, 65532, 0, 2, 65533, 0, 2, 65534, 0, 2, 65535, 0, 2, 0, 0, 2, -65524, 0, 2, -65523, 0, 2, -65522, 0, 2, -65521, 0, 2, -65520, 0, 2, -65519, 0, 2, -65518, 0, 2, -9, 0, 2, -10, 0, 2, -11, 0, 2, -12, 0, 2, -13, 0, 2, -14, 0, 2, -15, 0, 2, -16, 0, 2, -131083, 0, 2, -65547, 0, 2, -17, 0, 2, -18, 0, 2, -19, 0, 2, -20, 0, 2, -21, 0, 2, -65557, 0, 2, -131093, 0, 2, -131057, 0, 2, -131054, 65536, 2, -196590, 65536, 2, -65517, 65536, 2, -65516, 65536, 2, -65515, 65536, 2, -131051, 65536, 2, -196587, 65536, 2, -262123, 65536, 2)
+layer_0/tile_data = PackedInt32Array(-1, 0, 1, -65536, 0, 1, -65535, 0, 1, -65534, 0, 1, -65533, 0, 1, -65532, 0, 1, -65531, 0, 1, -65530, 0, 1, -65529, 0, 1, -262137, 0, 1, -327673, 0, 1, -393209, 0, 1, -262136, 0, 1, -393208, 0, 1, -458745, 0, 1, -524280, 0, 1, -524281, 0, 1, -589817, 0, 1, 6, 0, 1, 7, 0, 1, 8, 0, 1, 9, 0, 1, -65528, 0, 3, -65527, 0, 3, -65526, 0, 3, -65525, 0, 3, -8, 0, 2, 65528, 0, 2, 65529, 0, 2, 65530, 0, 2, 65531, 0, 2, 65532, 0, 2, 65533, 0, 2, 65534, 0, 2, 65535, 0, 2, 0, 0, 2, -65524, 0, 2, -65523, 0, 2, -65522, 0, 2, -65521, 0, 2, -65520, 0, 2, -65519, 0, 2, -65518, 0, 2, -9, 0, 2, -10, 0, 2, -11, 0, 2, -12, 0, 2, -13, 0, 2, -14, 0, 2, -15, 0, 2, -16, 0, 2, -131083, 0, 2, -65547, 0, 2, -17, 0, 2, -18, 0, 2, -19, 0, 2, -20, 0, 2, -21, 0, 2, -65557, 0, 2, -131093, 0, 2, -131057, 0, 2, -131054, 65536, 2, -196590, 65536, 2, -65517, 65536, 2, -65516, 65536, 2, -65515, 65536, 2, -131051, 65536, 2, -196587, 65536, 2, -262123, 65536, 2)
 
 [node name="Player" parent="." instance=ExtResource("1_ebmjs")]
 position = Vector2(2, -39)
@@ -133,7 +134,7 @@ position = Vector2(-76, -8)
 [node name="shrinkzone" parent="." instance=ExtResource("4_3dryh")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shrinkzone"]
-position = Vector2(94.5, -34)
+position = Vector2(-198, -34)
 shape = SubResource("RectangleShape2D_wowpa")
 
 [node name="trampolina" parent="." instance=ExtResource("5_wowpa")]
@@ -143,4 +144,7 @@ position = Vector2(-145, -22)
 position = Vector2(-275, -31)
 
 [node name="door" parent="." instance=ExtResource("7_1l0tm")]
-position = Vector2(39, -33)
+position = Vector2(225, -32)
+
+[node name="pushBox" parent="." instance=ExtResource("8_v158k")]
+position = Vector2(50, -32)
