@@ -1,3 +1,103 @@
-[gd_scene format=3 uid="uid://2njjqon7putm"]
+[gd_scene load_steps=8 format=3 uid="uid://2njjqon7putm"]
+
+[ext_resource type="PackedScene" uid="uid://vgfjb3roo1xx" path="res://Scenes/player.tscn" id="1_8ffim"]
+[ext_resource type="Texture2D" uid="uid://buycd6cn8vue8" path="res://Assets/shrinkingFileSet.png" id="2_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://dedp7gs35pv3v" path="res://Scenes/killzone.tscn" id="3_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://b1euqaul874pa" path="res://Scenes/enemy.tscn" id="4_7p6j4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7p6j4"]
+texture = ExtResource("2_xfk5q")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.9869, -15.996, 16.052, -15.9967, 16.1323, 16.0464, -16.0078, 15.9967)
+0:0/0/physics_layer_0/polygon_0/one_way_margin = 2.0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+2:2/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+4:1/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+7:2/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+6:3/0 = 0
+6:2/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+5:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6444e"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_7p6j4")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7p6j4"]
 
 [node name="Level1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+position = Vector2(-1, 41)
+tile_set = SubResource("TileSet_6444e")
+rendering_quadrant_size = 32
+format = 2
+layer_0/name = "Back"
+layer_0/tile_data = PackedInt32Array(327715, 458752, 3, 196643, 458752, 3, 65571, 458752, 3, -65501, 458752, 3, -196573, 458752, 2, -131039, 458752, 2, -131035, 458752, 2, 327713, 458752, 3, 196641, 458752, 3, 65569, 458752, 3, 33, 458752, 3, 327717, 458752, 3, 196645, 458752, 3, 65573, 458752, 3, 37, 458752, 3, 327711, 524288, 268435459)
+layer_1/name = "Decor"
+layer_1/tile_data = PackedInt32Array(196643, 65536, 5, 327709, 393216, 4, 196617, 262144, 3, 65545, 262144, 2, -65527, 262144, 2, -196599, 262144, 1)
+layer_2/name = "Blocks"
+layer_2/tile_data = PackedInt32Array(327691, 65536, 1, 327689, 65536, 1, 327693, 65536, 1, 458761, 0, 1, 458763, 0, 1, 458765, 0, 1, 589833, 0, 2, 589835, 0, 2, 589837, 0, 2, 327699, 65536, 1, 458771, 0, 1, 589843, 0, 2, 589845, 0, 2, 589847, 0, 2, 458773, 65536, 1, 458775, 65536, 1, 458777, 65536, 1, 327707, 65536, 1, 458781, 65536, 1, 458783, 65536, 1, 458779, 0, 1, 589849, 0, 2, 589851, 0, 2, 589853, 0, 2, 589855, 0, 2, 458785, 65536, 1, 458787, 65536, 1, 458789, 65536, 1, 458791, 0, 1, 327719, 0, 1, 196647, 0, 1, 65575, 0, 1, -65497, 0, 1, -131033, 0, 1, -262113, 0, 0, -262105, 0, 0, 131103, 0, 1, 31, 0, 1, -131041, 0, 1, 262175, 0, 2, 589857, 0, 2, 589859, 0, 2, 589861, 0, 2, 589863, 0, 2)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 170.0
+offset_top = 59.0
+offset_right = 313.0
+offset_bottom = 83.0
+scale = Vector2(0.510875, 0.494713)
+text = "W, A, S, D to move"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 341.0
+offset_top = 79.0
+offset_right = 484.0
+offset_bottom = 128.0
+scale = Vector2(0.510875, 0.494713)
+text = "Take damage
+to shrink"
+horizontal_alignment = 1
+
+[node name="Player" parent="." instance=ExtResource("1_8ffim")]
+visibility_layer = 512
+position = Vector2(183, 97)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1, 0)
+zoom = Vector2(2, 2)
+limit_bottom = 230
+
+[node name="Killzone" parent="." instance=ExtResource("3_xfk5q")]
+position = Vector2(278, 231)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_7p6j4")
+
+[node name="Enemy" parent="." instance=ExtResource("4_7p6j4")]
+position = Vector2(376, 139)

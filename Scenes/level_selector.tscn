@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://f156fnj31nt0"]
+
+[ext_resource type="Script" uid="uid://deym134chy6kb" path="res://Script/level_selector.gd" id="1_22lal"]
+
+[node name="LevelSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_22lal")
+
+[node name="Return" type="Button" parent="."]
+layout_mode = 2
+offset_left = 52.0
+offset_top = 545.0
+offset_right = 145.0
+offset_bottom = 584.0
+scale = Vector2(1.69863, 1.34671)
+text = "Back"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 168.0
+offset_right = 228.0
+offset_bottom = 199.0
+scale = Vector2(1.14591, 1.12542)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Level1" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level 1"
+
+[node name="Level2" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level 2"
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Level2" to="." method="_on_level_1_pressed"]
