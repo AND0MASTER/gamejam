@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d35tfankmdvid"]
+[gd_scene load_steps=13 format=3 uid="uid://d35tfankmdvid"]
 
 [ext_resource type="PackedScene" uid="uid://vgfjb3roo1xx" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://buycd6cn8vue8" path="res://Assets/shrinkingFileSet.png" id="1_qxrlw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cwf5iilqana32" path="res://Scenes/spike.tscn" id="6_i6g32"]
 [ext_resource type="PackedScene" uid="uid://ctvepsm4qbnfr" path="res://Scenes/door.tscn" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://cknp80mwwva0" path="res://Scenes/push_box.tscn" id="8_v158k"]
+[ext_resource type="PackedScene" uid="uid://xm1mk3nl7snj" path="res://Scenes/potion.tscn" id="9_h4fw4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("1_qxrlw")
@@ -148,3 +149,6 @@ position = Vector2(225, -32)
 
 [node name="pushBox" parent="." instance=ExtResource("8_v158k")]
 position = Vector2(50, -32)
+
+[node name="Potion" parent="." instance=ExtResource("9_h4fw4")]
+position = Vector2(49, -58)

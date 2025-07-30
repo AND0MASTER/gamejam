@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://xm1mk3nl7snj"]
+
+[ext_resource type="Script" uid="uid://i8kkqdjbmntg" path="res://Script/potion.gd" id="1_nymo1"]
+[ext_resource type="Texture2D" uid="uid://c065yighun1hl" path="res://Assets/potion.png" id="2_xi5ht"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nymo1"]
+radius = 8.06226
+
+[node name="Potion" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_nymo1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_xi5ht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nymo1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
