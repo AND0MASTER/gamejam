@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -350
 @onready var ray_cast_small: RayCast2D = $RayCastSmall
 @onready var ray_cast_wall: RayCast2D = $RayCastWall
 
+
 func _physics_process(delta: float) -> void:
 	#SIZE
 	scale.x = AutoLoadedScript.SIZE
@@ -47,4 +48,5 @@ func _physics_process(delta: float) -> void:
 	#Climbing
 	if ray_cast_wall.is_colliding() && AutoLoadedScript.climbing == true:
 		velocity.y = -50
+	
 	move_and_slide()
