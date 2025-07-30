@@ -23,6 +23,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("grow") and is_on_floor():
 		if !ray_cast_small.is_colliding():
 			AutoLoadedScript.SIZE = 1
+	#RESET
+	if Input.is_action_just_pressed("reset") and is_on_floor():
+		get_tree().reload_current_scene()
+		AutoLoadedScript.SIZE = 1
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
