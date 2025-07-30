@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 AutoLoadedScript="*res://Script/auto_loaded_script.gd"
 
+[global_group]
+
+Player=""
+
 [input]
 
 jump={
