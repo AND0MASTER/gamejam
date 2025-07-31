@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d35tfankmdvid"]
+[gd_scene load_steps=18 format=3 uid="uid://d35tfankmdvid"]
 
 [ext_resource type="PackedScene" uid="uid://vgfjb3roo1xx" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://buycd6cn8vue8" path="res://Assets/shrinkingFileSet.png" id="1_qxrlw"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cn52wg1yw04f5" path="res://Scenes/key.tscn" id="10_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://d0722wdc5hobq" path="res://Scenes/key_block.tscn" id="11_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://beltlk3upgpw8" path="res://Scenes/weight_block.tscn" id="12_rku1e"]
+[ext_resource type="PackedScene" uid="uid://c85d2x0j0raa6" path="res://Scenes/vines.tscn" id="13_rfjv2"]
+[ext_resource type="PackedScene" uid="uid://3i13131jc26f" path="res://Scenes/vine_over.tscn" id="14_1phco"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("1_qxrlw")
@@ -179,3 +181,12 @@ position = Vector2(-373, -67)
 
 [node name="weightBlock6" parent="." instance=ExtResource("12_rku1e")]
 position = Vector2(-405, -67)
+
+[node name="Vines" parent="." instance=ExtResource("13_rfjv2")]
+position = Vector2(96, -31)
+
+[node name="Vines2" parent="Vines" instance=ExtResource("13_rfjv2")]
+position = Vector2(0, -30)
+
+[node name="VineOver" parent="Vines" instance=ExtResource("14_1phco")]
+position = Vector2(5, -72)

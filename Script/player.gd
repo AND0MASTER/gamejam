@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -350
 @onready var ray_cast_small: RayCast2D = $RayCastSmall
 @onready var ray_cast_wall: RayCast2D = $RayCastWall
 
+var is_on_ladder = false
 
 func _physics_process(delta: float) -> void:
 	#SIZE
@@ -32,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
-		ray_cast_wall.scale.x =1
+		ray_cast_wall.scale.x = 1
 	elif direction < 0:
 		animated_sprite_2d.flip_h = true
 		ray_cast_wall.scale.x = -1
@@ -45,8 +46,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	#Climbing
-	if ray_cast_wall.is_colliding() && AutoLoadedScript.climbing == true:
-		velocity.y = -50
+		#climbing
+	if is_on_ladder && Input.is_action_pressed("jump") && ray_cast_wall.is_colliding():
+			velocity.y = -50
+			
 	
 	move_and_slide()
