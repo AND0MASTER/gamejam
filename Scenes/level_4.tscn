@@ -85,7 +85,7 @@ position = Vector2(343, -31)
 [node name="trampolina" parent="." instance=ExtResource("4_5a8oa")]
 position = Vector2(280, 107)
 
-[node name="Label" type="Label" parent="."]
+[node name="Trampoline" type="Label" parent="."]
 offset_left = 204.0
 offset_top = 64.0
 offset_right = 369.0

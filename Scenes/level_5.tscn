@@ -1,11 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsvsn7b0ib8o"]
+[gd_scene load_steps=13 format=3 uid="uid://bsvsn7b0ib8o"]
 
 [ext_resource type="Texture2D" uid="uid://buycd6cn8vue8" path="res://Assets/shrinkingFileSet.png" id="1_ip5ew"]
 [ext_resource type="PackedScene" uid="uid://vgfjb3roo1xx" path="res://Scenes/player.tscn" id="2_hproo"]
 [ext_resource type="PackedScene" uid="uid://dedp7gs35pv3v" path="res://Scenes/killzone.tscn" id="3_26dk1"]
+[ext_resource type="PackedScene" uid="uid://xm1mk3nl7snj" path="res://Scenes/potion.tscn" id="4_26dk1"]
 [ext_resource type="PackedScene" uid="uid://ctvepsm4qbnfr" path="res://Scenes/door.tscn" id="4_mb3x2"]
+[ext_resource type="PackedScene" uid="uid://c85d2x0j0raa6" path="res://Scenes/vines.tscn" id="5_mb3x2"]
+[ext_resource type="PackedScene" uid="uid://3i13131jc26f" path="res://Scenes/vine_over.tscn" id="7_mb3x2"]
+[ext_resource type="PackedScene" uid="uid://dod54sb0340cf" path="res://Scenes/trampolina.tscn" id="8_02esc"]
+[ext_resource type="PackedScene" uid="uid://cwf5iilqana32" path="res://Scenes/spike.tscn" id="9_gfyxx"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_02esc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26dk1"]
 texture = ExtResource("1_ip5ew")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -20,8 +25,11 @@ texture_region_size = Vector2i(32, 32)
 0:2/0 = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.247, -6.87702, 16.1743, -6.96227, 16.1278, 7.13489, -16.1278, 7.43218)
 2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.247, -6.87702, 16.1743, -6.96227, 16.1278, 7.13489, -16.1278, 7.43218)
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.247, -6.87702, 16.1743, -6.96227, 16.1278, 7.13489, -16.1278, 7.43218)
 4:1/0 = 0
 4:2/0 = 0
 4:3/0 = 0
@@ -44,9 +52,9 @@ texture_region_size = Vector2i(32, 32)
 6:6/0 = 0
 5:7/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_gfyxx"]
+[sub_resource type="TileSet" id="TileSet_mb3x2"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_02esc")
+sources/0 = SubResource("TileSetAtlasSource_26dk1")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xfwg7"]
 
@@ -55,21 +63,15 @@ sources/0 = SubResource("TileSetAtlasSource_02esc")
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 position = Vector2(-1, 41)
-tile_set = SubResource("TileSet_gfyxx")
+tile_set = SubResource("TileSet_mb3x2")
 rendering_quadrant_size = 32
 format = 2
 layer_0/name = "Back"
+layer_0/tile_data = PackedInt32Array(327683, 262144, 3, 196611, 262144, 2, 65539, 262144, 2, -720896, 458752, 805306372)
 layer_1/name = "Decor"
+layer_1/tile_data = PackedInt32Array(-1572868, 393216, 6)
 layer_2/name = "Blocks"
-
-[node name="Player" parent="." instance=ExtResource("2_hproo")]
-visibility_layer = 512
-position = Vector2(183, 97)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(1, 0)
-zoom = Vector2(2, 2)
-limit_bottom = 205
+layer_2/tile_data = PackedInt32Array(458755, 65536, 1, 458757, 65536, 1, 458759, 65536, 1, 458761, 0, 1, 327689, 0, 1, 196617, 0, 1, 65545, 0, 1, -65527, 0, 1, 3, 65536, 1, 5, 65536, 268435459, -262154, 0, 1, -131082, 0, 1, -10, 0, 1, 131062, 0, 1, 262134, 0, 1, 393206, 0, 1, 524278, 0, 1, 524285, 65536, 1, -393226, 0, 1, -262150, 65536, 1, -524298, 0, 0, 589833, 0, 2, 589831, 0, 2, 589829, 0, 2, 655357, 0, 2, 655350, 0, 2, 589827, 131072, 805306369, -262148, 0, 1, -393220, 0, 1, -524292, 65536, 1, -851968, 65536, 1, -458754, 131072, 3, -524288, 131072, 3, -524286, 131072, 3, -524284, 131072, 3, -524282, 131072, 3, -196599, 0, 1, -327671, 0, 1, -524281, 131072, 3, -458743, 0, 1, -524279, 131072, 3, -1966089, 0, 0, -1835017, 0, 1, -1703945, 0, 1, -1572873, 0, 1, -1441801, 0, 1, -1310729, 0, 2, -1441799, 65536, 1, -1310727, 0, 2, -1441797, 65536, 1, -1310725, 0, 2, -1441795, 65536, 1, -1310723, 0, 2, -720896, 458752, 805306372, -1507327, 65536, 1, -1441791, 0, 2, -1507325, 65536, 1, -1441789, 0, 2, -983036, 65536, 1, -1507323, 65536, 268435459, -1572855, 0, 1, -1441783, 0, 1, -1310711, 0, 1, -1179639, 0, 1, -1048567, 0, 1, -2031607, 0, 0, -1703927, 0, 1, -1834999, 0, 1, -1900535, 0, 1)
 
 [node name="Killzone" parent="." instance=ExtResource("3_26dk1")]
 position = Vector2(278, 231)
@@ -78,4 +80,176 @@ position = Vector2(278, 231)
 shape = SubResource("WorldBoundaryShape2D_xfwg7")
 
 [node name="door" parent="." instance=ExtResource("4_mb3x2")]
-position = Vector2(241, 98)
+position = Vector2(-105, -351)
+
+[node name="Potion" parent="." instance=ExtResource("4_26dk1")]
+position = Vector2(87, 129)
+
+[node name="Potion2" parent="." instance=ExtResource("4_26dk1")]
+position = Vector2(71, -261)
+
+[node name="trampolina" parent="." instance=ExtResource("8_02esc")]
+position = Vector2(-42, 139)
+
+[node name="Vines" type="Node" parent="."]
+
+[node name="Vines" parent="Vines" instance=ExtResource("5_mb3x2")]
+position = Vector2(149, 129)
+rotation = 3.14159
+
+[node name="Vines2" parent="Vines" instance=ExtResource("5_mb3x2")]
+position = Vector2(149, 97)
+rotation = 3.14159
+
+[node name="Vines3" parent="Vines" instance=ExtResource("5_mb3x2")]
+position = Vector2(149, 65)
+rotation = 3.14159
+
+[node name="Vines4" parent="Vines" instance=ExtResource("5_mb3x2")]
+position = Vector2(149, 33)
+rotation = 3.14159
+
+[node name="VineOver" parent="Vines" instance=ExtResource("7_mb3x2")]
+position = Vector2(88, 26)
+
+[node name="VineOver2" parent="Vines" instance=ExtResource("7_mb3x2")]
+position = Vector2(124, -10)
+
+[node name="Vines5" parent="Vines" instance=ExtResource("5_mb3x2")]
+position = Vector2(-150, -31)
+
+[node name="Vines6" parent="Vines" instance=ExtResource("5_mb3x2")]
+position = Vector2(-150, 1)
+
+[node name="Vines7" parent="Vines" instance=ExtResource("5_mb3x2")]
+position = Vector2(-150, -63)
+
+[node name="VineOver3" parent="Vines" instance=ExtResource("7_mb3x2")]
+position = Vector2(-127, -105)
+
+[node name="VineOver4" parent="Vines" instance=ExtResource("7_mb3x2")]
+position = Vector2(-90, -63)
+
+[node name="VineOver5" parent="Vines" instance=ExtResource("7_mb3x2")]
+position = Vector2(-100, -32)
+
+[node name="Vines9" parent="Vines" instance=ExtResource("5_mb3x2")]
+position = Vector2(149, -207)
+rotation = 3.14159
+
+[node name="Vines10" parent="Vines" instance=ExtResource("5_mb3x2")]
+position = Vector2(149, -239)
+rotation = 3.14159
+
+[node name="Vines11" parent="Vines" instance=ExtResource("5_mb3x2")]
+position = Vector2(149, -271)
+rotation = 3.14159
+
+[node name="Vines12" parent="Vines" instance=ExtResource("5_mb3x2")]
+position = Vector2(149, -303)
+rotation = 3.14159
+
+[node name="Vines13" parent="Vines" instance=ExtResource("5_mb3x2")]
+position = Vector2(149, -335)
+rotation = 3.14159
+
+[node name="VineOver6" parent="Vines" instance=ExtResource("7_mb3x2")]
+position = Vector2(152, -176)
+
+[node name="VineOver7" parent="Vines" instance=ExtResource("7_mb3x2")]
+position = Vector2(152, -150)
+
+[node name="VineOver8" parent="Vines" instance=ExtResource("7_mb3x2")]
+position = Vector2(152, -125)
+
+[node name="VineOver9" parent="Vines" instance=ExtResource("7_mb3x2")]
+position = Vector2(81, -192)
+
+[node name="VineOver10" parent="Vines" instance=ExtResource("7_mb3x2")]
+position = Vector2(131, -380)
+
+[node name="VineOver11" parent="Vines" instance=ExtResource("7_mb3x2")]
+position = Vector2(88, -341)
+
+[node name="VineOver12" parent="Vines" instance=ExtResource("7_mb3x2")]
+position = Vector2(219, -721)
+
+[node name="VineOver13" parent="Vines" instance=ExtResource("7_mb3x2")]
+position = Vector2(96, -319)
+
+[node name="VineOver10" parent="Vines/VineOver13" instance=ExtResource("7_mb3x2")]
+position = Vector2(131, -380)
+
+[node name="spikes" type="Node" parent="."]
+
+[node name="spike2" parent="spikes" instance=ExtResource("9_gfyxx")]
+position = Vector2(-17, -102)
+
+[node name="spike3" parent="spikes" instance=ExtResource("9_gfyxx")]
+position = Vector2(15, -102)
+
+[node name="spike" parent="spikes" instance=ExtResource("9_gfyxx")]
+position = Vector2(-122, 33)
+rotation = 1.5708
+
+[node name="spike4" parent="spikes" instance=ExtResource("9_gfyxx")]
+position = Vector2(47, -102)
+
+[node name="spike5" parent="spikes" instance=ExtResource("9_gfyxx")]
+position = Vector2(79, -102)
+
+[node name="spike6" parent="spikes" instance=ExtResource("9_gfyxx")]
+position = Vector2(111, -102)
+
+[node name="spike7" parent="spikes" instance=ExtResource("9_gfyxx")]
+position = Vector2(143, -102)
+
+[node name="spike8" parent="spikes" instance=ExtResource("9_gfyxx")]
+position = Vector2(-122, 33)
+rotation = 1.5708
+
+[node name="spike9" parent="spikes" instance=ExtResource("9_gfyxx")]
+position = Vector2(71, -223)
+
+[node name="spike10" parent="spikes" instance=ExtResource("9_gfyxx")]
+position = Vector2(23, -351)
+
+[node name="Player" parent="." instance=ExtResource("2_hproo")]
+visibility_layer = 512
+position = Vector2(54, 129)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1, 0)
+zoom = Vector2(2, 2)
+limit_bottom = 205
+
+[node name="Vine" type="Label" parent="."]
+offset_left = -40.0
+offset_top = 74.0
+offset_right = 132.0
+offset_bottom = 149.0
+scale = Vector2(0.510875, 0.494713)
+text = "When you are small,
+ while pressing W 
+you can climb vines"
+horizontal_alignment = 1
+
+[node name="Growing" type="Label" parent="."]
+offset_left = -150.0
+offset_top = -152.0
+offset_right = 35.0
+offset_bottom = -77.0
+scale = Vector2(0.510875, 0.494713)
+text = "Pressing F will 
+return you to 
+your original size"
+horizontal_alignment = 1
+
+[node name="Growing2" type="Label" parent="."]
+offset_left = -21.0
+offset_top = -393.0
+offset_right = 164.0
+offset_bottom = -318.0
+scale = Vector2(0.510875, 0.494713)
+text = "Don't forget F!"
+horizontal_alignment = 1

@@ -82,7 +82,7 @@ position = Vector2(279, 97)
 [node name="spike2" parent="." instance=ExtResource("6_5rvg2")]
 position = Vector2(408, 65)
 
-[node name="Label" type="Label" parent="."]
+[node name="Potions" type="Label" parent="."]
 offset_left = 481.0
 offset_top = -13.0
 offset_right = 625.0
