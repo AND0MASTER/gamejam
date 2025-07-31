@@ -203,5 +203,5 @@ layer_0/tile_data = PackedInt32Array(327690, 131072, 2, 393226, 131072, 3, 32769
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_play_pressed"]
