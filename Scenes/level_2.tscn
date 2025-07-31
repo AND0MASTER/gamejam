@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnew25r3yp34a"]
+[gd_scene load_steps=9 format=3 uid="uid://cnew25r3yp34a"]
 
 [ext_resource type="Texture2D" uid="uid://buycd6cn8vue8" path="res://Assets/shrinkingFileSet.png" id="1_smnlx"]
 [ext_resource type="PackedScene" uid="uid://vgfjb3roo1xx" path="res://Scenes/player.tscn" id="2_12fag"]
+[ext_resource type="PackedScene" uid="uid://dedp7gs35pv3v" path="res://Scenes/killzone.tscn" id="3_1q6tm"]
+[ext_resource type="PackedScene" uid="uid://ctvepsm4qbnfr" path="res://Scenes/door.tscn" id="4_v36qu"]
+[ext_resource type="PackedScene" uid="uid://cwf5iilqana32" path="res://Scenes/spike.tscn" id="7_055b2"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1q6tm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v36qu"]
 texture = ExtResource("1_smnlx")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -18,8 +21,11 @@ texture_region_size = Vector2i(32, 32)
 0:2/0 = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.247, -6.87702, 16.1743, -6.96227, 16.1278, 7.13489, -16.1278, 7.43218)
 2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.247, -6.87702, 16.1743, -6.96227, 16.1278, 7.13489, -16.1278, 7.43218)
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.247, -6.87702, 16.1743, -6.96227, 16.1278, 7.13489, -16.1278, 7.43218)
 4:1/0 = 0
 4:2/0 = 0
 4:3/0 = 0
@@ -42,30 +48,92 @@ texture_region_size = Vector2i(32, 32)
 6:6/0 = 0
 5:7/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_v36qu"]
+[sub_resource type="TileSet" id="TileSet_055b2"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_1q6tm")
+sources/0 = SubResource("TileSetAtlasSource_v36qu")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2mgoq"]
 
 [node name="Level2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 position = Vector2(-1, 41)
-tile_set = SubResource("TileSet_v36qu")
+tile_set = SubResource("TileSet_055b2")
 rendering_quadrant_size = 32
 format = 2
 layer_0/name = "Back"
-layer_0/tile_data = PackedInt32Array(327715, 458752, 3, 196643, 458752, 3, 65571, 458752, 3, -65501, 458752, 3, -196573, 458752, 2, -131039, 458752, 2, -131035, 458752, 2, 327713, 458752, 3, 196641, 458752, 3, 65569, 458752, 3, 33, 458752, 3, 327717, 458752, 3, 196645, 458752, 3, 65573, 458752, 3, 37, 458752, 3, 327711, 524288, 268435459)
+layer_0/tile_data = PackedInt32Array(458761, 262144, 2, 589833, 262144, 2, 458767, 262144, 2, 589839, 262144, 2, 589843, 262144, 2, 458771, 262144, 2, -524270, 0, 1, 589848, 262144, 2, 458776, 262144, 2, -65507, 262144, 2, -196579, 262144, 2, -327651, 262144, 2, -65503, 262144, 2, -196575, 262144, 2, -327647, 262144, 2, -327677, 262144, 1342177282, -65533, 262144, 1342177282)
 layer_1/name = "Decor"
-layer_1/tile_data = PackedInt32Array(196643, 65536, 5, 327709, 393216, 4, 196617, 393216, 6)
 layer_2/name = "Blocks"
-layer_2/tile_data = PackedInt32Array(327691, 65536, 1, 327689, 65536, 1, 327693, 65536, 1, 458761, 0, 1, 458763, 0, 1, 458765, 0, 1, 589833, 0, 2, 589835, 0, 2, 589837, 0, 2, 327699, 65536, 1, 458771, 0, 1, 589843, 0, 2, 589845, 0, 2, 589847, 0, 2, 458773, 65536, 1, 458775, 65536, 1, 458777, 65536, 1, 327707, 65536, 1, 458781, 65536, 1, 458783, 65536, 1, 458779, 0, 1, 589849, 0, 2, 589851, 0, 2, 589853, 0, 2, 589855, 0, 2, 458785, 65536, 1, 458787, 65536, 1, 458789, 65536, 1, 458791, 0, 1, 327719, 0, 1, 196647, 0, 1, 65575, 0, 1, -65497, 0, 1, -131033, 0, 1, -262113, 0, 0, -262105, 0, 0, 131103, 0, 1, 31, 0, 1, -131041, 0, 1, 262175, 0, 2, 589857, 0, 2, 589859, 0, 2, 589861, 0, 2, 589863, 0, 2)
+layer_2/tile_data = PackedInt32Array(327697, 65536, 1, 327695, 65536, 1, 327699, 65536, 1, 327703, 65536, 1, 327707, 65536, 1, 327705, 65536, 1, 327689, 65536, 1, 196615, 0, 1, 65543, 0, 1, -65529, 0, 1, 327687, 0, 1, 458759, 0, 1, 589831, 0, 2, 589829, 0, 2, 589828, 0, 2, 589827, 0, 2, 65565, 65536, 1, 196637, 0, 1, 327709, 0, 1, 458781, 0, 1, 589853, 0, 2, 65567, 65536, 1, 65569, 65536, 1, -196573, 65536, 1, -458719, 65536, 1, -458721, 65536, 1, -65501, 0, 1, 65571, 0, 1, -327643, 0, 1, -458715, 0, 1, -589787, 0, 1, -720859, 0, 1, -196571, 0, 1, -65499, 0, 1, 65573, 0, 1, 196639, 0, 1, 196641, 0, 1, 196643, 0, 1, 196645, 0, 1, 327711, 0, 1, 327713, 0, 1, 327715, 0, 1, 327717, 0, 1, 458789, 0, 1, 458787, 0, 1, 458785, 0, 1, 458783, 0, 1, 589855, 0, 2, 589857, 0, 2, 589859, 0, 2, 589861, 0, 2, -393187, 0, 2, -393185, 0, 2, -851931, 0, 1, -983003, 0, 0, -196601, 0, 1, -327673, 0, 1, -458745, 65536, 1, -458743, 65536, 1, -458741, 65536, 1, -327671, 131072, 1342177281, -458736, 65536, 3, -458734, 131072, 3, -458732, 65536, 268435459, -458723, 0, 1, -589795, 65536, 1, -589797, 65536, 1, -393189, 131072, 805306369, -524261, 0, 1, -327675, 65536, 1, -327679, 65536, 1, 327683, 65536, 1, -262145, 0, 1, -393217, 0, 1, -131073, 0, 1, -1, 0, 1, 131071, 0, 1, 262143, 0, 1, 393215, 0, 1, 524287, 0, 1, 458753, 0, 1, 458755, 0, 1, 458757, 0, 1, 589825, 0, 2, 655359, 0, 2, -65535, 65536, 1, -65531, 65536, 1, 196609, 65536, 1, 196613, 65536, 1, 327685, 0, 1, 327681, 0, 1, -524289, 0, 1, -655361, 0, 1, -786433, 0, 1, -917505, 0, 0)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 242.0
+offset_top = 29.0
+offset_right = 386.0
+offset_bottom = 78.0
+scale = Vector2(0.510875, 0.494713)
+text = "Spikes kill you
+ immediately"
+horizontal_alignment = 1
+
+[node name="Killzone" parent="." instance=ExtResource("3_1q6tm")]
+position = Vector2(278, 231)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_2mgoq")
+
+[node name="door" parent="." instance=ExtResource("4_v36qu")]
+position = Vector2(56, 97)
+
+[node name="spike" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(279, 97)
+
+[node name="spike2" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(375, 97)
+
+[node name="spike3" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(439, 97)
+
+[node name="spike4" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(503, 33)
+
+[node name="spike5" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(503, -95)
+
+[node name="spike6" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(295, -111)
+
+[node name="spike7" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(183, -95)
+
+[node name="spike8" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(440, -127)
+
+[node name="spike9" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(87, -63)
+
+[node name="spike10" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(23, -63)
+
+[node name="spike11" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(23, 1)
+
+[node name="spike12" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(87, 2)
+
+[node name="spike13" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(23, 65)
+
+[node name="spike14" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(87, 65)
 
 [node name="Player" parent="." instance=ExtResource("2_12fag")]
 visibility_layer = 512
-position = Vector2(183, 97)
+position = Vector2(149, 97)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)
 zoom = Vector2(2, 2)
-limit_bottom = 230
+limit_bottom = 205

@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://cy37s4m3c851e"]
+
+[ext_resource type="Texture2D" uid="uid://buycd6cn8vue8" path="res://Assets/shrinkingFileSet.png" id="1_s8nj6"]
+[ext_resource type="PackedScene" uid="uid://vgfjb3roo1xx" path="res://Scenes/player.tscn" id="2_vwg62"]
+[ext_resource type="PackedScene" uid="uid://dedp7gs35pv3v" path="res://Scenes/killzone.tscn" id="3_qf6rc"]
+[ext_resource type="PackedScene" uid="uid://ctvepsm4qbnfr" path="res://Scenes/door.tscn" id="4_53xsp"]
+[ext_resource type="PackedScene" uid="uid://xm1mk3nl7snj" path="res://Scenes/potion.tscn" id="5_l4wr6"]
+[ext_resource type="PackedScene" uid="uid://cwf5iilqana32" path="res://Scenes/spike.tscn" id="6_5rvg2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vwg62"]
+texture = ExtResource("1_s8nj6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.9869, -15.996, 16.052, -15.9967, 16.1323, 16.0464, -16.0078, 15.9967)
+0:0/0/physics_layer_0/polygon_0/one_way_margin = 2.0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+2:2/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+4:1/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+7:2/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+6:3/0 = 0
+6:2/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+5:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qf6rc"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_vwg62")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_53xsp"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+position = Vector2(-1, 41)
+tile_set = SubResource("TileSet_qf6rc")
+rendering_quadrant_size = 32
+format = 2
+layer_0/name = "Back"
+layer_0/tile_data = PackedInt32Array(196615, 458752, 3, 196617, 458752, 3, 65545, 458752, 3, 65543, 458752, 3, -65527, 458752, 3, -65529, 458752, 3, -196599, 458752, 2, -196601, 458752, 2, 196619, 393216, 268435459, 65547, 393216, 268435459, -65525, 393216, 268435459, -196597, 393216, 268435458, 458761, 458752, 3, 458764, 524288, 3, 458763, 458752, 3, -131040, 458752, 3, -262112, 458752, 3, -393184, 458752, 3, -524256, 458752, 2, -458721, 458752, 2, -458719, 458752, 2, -327649, 458752, 3, -196577, 458752, 3, -131041, 458752, 3, -131039, 458752, 3, -262111, 458752, 3, -327647, 458752, 3, -131043, 393216, 3, -262115, 393216, 3, -393187, 393216, 3, -131037, 393216, 268435459, -262109, 393216, 268435459, -393181, 393216, 268435459, 32, 458752, 3, 131104, 458752, 3, 35, 393216, 268435459, 131107, 393216, 268435459, 131105, 458752, 3, 33, 458752, 3, -327648, 131072, 5)
+layer_1/name = "Decor"
+layer_1/tile_data = PackedInt32Array(65544, 65536, 5, 196616, 327680, 6, -131040, 196608, 5, -327648, 131072, 5)
+layer_2/name = "Blocks"
+layer_2/tile_data = PackedInt32Array(327687, 65536, 1, 458759, 0, 1, 589831, 0, 1, 720903, 0, 2, 327689, 65536, 1, 589833, 65536, 1, 720905, 0, 2, 327691, 65536, 1, 589835, 65536, 1, 720907, 0, 2, 327693, 65536, 1, 393229, 0, 1, 589837, 65536, 1, 720909, 0, 2, 327685, 0, 1, 196613, 0, 1, 65541, 0, 1, -65531, 0, 1, -196603, 0, 1, 458757, 0, 1, 589829, 0, 1, 720901, 0, 2, -327675, 0, 0, 327697, 65536, 1, 327699, 65536, 1, 589841, 65536, 1, 589843, 65536, 1, 720913, 0, 2, 720915, 0, 2, 393235, 0, 2, 393233, 0, 2, 196632, 65536, 1, 458776, 65536, 1, 196634, 65536, 1, 262170, 0, 2, 458778, 65536, 1, 720920, 0, 2, 720922, 0, 2, 589848, 0, 1, 589850, 0, 1, 30, 65536, 1, 131102, 0, 1, 655390, 0, 1, 720926, 0, 2, 655392, 0, 1, 720928, 0, 2, 262168, 0, 2, 655394, 0, 1, 720930, 0, 2, 262176, 65536, 1, 262178, 65536, 1, 458782, 65536, 1, 458784, 65536, 1, 458786, 65536, 1, 524318, 0, 1, 524320, 0, 1, 524322, 0, 1, 196638, 0, 1)
+
+[node name="Killzone" parent="." instance=ExtResource("3_qf6rc")]
+position = Vector2(278, 231)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_53xsp")
+
+[node name="door" parent="." instance=ExtResource("4_53xsp")]
+position = Vector2(152, 161)
+
+[node name="spike" parent="." instance=ExtResource("6_5rvg2")]
+position = Vector2(279, 97)
+
+[node name="spike2" parent="." instance=ExtResource("6_5rvg2")]
+position = Vector2(408, 65)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 481.0
+offset_top = -13.0
+offset_right = 625.0
+offset_bottom = 11.0
+scale = Vector2(0.510875, 0.494713)
+text = "Potions shrink you"
+horizontal_alignment = 1
+
+[node name="Potion" parent="." instance=ExtResource("5_l4wr6")]
+position = Vector2(551, 90)
+
+[node name="Player" parent="." instance=ExtResource("2_vwg62")]
+visibility_layer = 512
+position = Vector2(182, 97)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1, 0)
+zoom = Vector2(2, 2)
+limit_bottom = 205
+
+[node name="spike3" parent="." instance=ExtResource("6_5rvg2")]
+position = Vector2(519, 81)

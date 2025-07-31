@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://dp266wpsxjalr"]
+
+[ext_resource type="Texture2D" uid="uid://buycd6cn8vue8" path="res://Assets/shrinkingFileSet.png" id="1_67u3v"]
+[ext_resource type="PackedScene" uid="uid://vgfjb3roo1xx" path="res://Scenes/player.tscn" id="2_helb0"]
+[ext_resource type="PackedScene" uid="uid://dedp7gs35pv3v" path="res://Scenes/killzone.tscn" id="3_gqpvc"]
+[ext_resource type="PackedScene" uid="uid://ctvepsm4qbnfr" path="res://Scenes/door.tscn" id="4_rkygx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b33os"]
+texture = ExtResource("1_67u3v")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.9869, -15.996, 16.052, -15.9967, 16.1323, 16.0464, -16.0078, 15.9967)
+0:0/0/physics_layer_0/polygon_0/one_way_margin = 2.0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
+2:2/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+4:1/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+7:2/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+6:3/0 = 0
+6:2/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+5:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_546p8"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_b33os")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vu5tt"]
+
+[node name="Level6" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+position = Vector2(-1, 41)
+tile_set = SubResource("TileSet_546p8")
+rendering_quadrant_size = 32
+format = 2
+layer_0/name = "Back"
+layer_1/name = "Decor"
+layer_2/name = "Blocks"
+
+[node name="Player" parent="." instance=ExtResource("2_helb0")]
+visibility_layer = 512
+position = Vector2(183, 97)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1, 0)
+zoom = Vector2(2, 2)
+limit_bottom = 205
+
+[node name="Killzone" parent="." instance=ExtResource("3_gqpvc")]
+position = Vector2(278, 231)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_vu5tt")
+
+[node name="door" parent="." instance=ExtResource("4_rkygx")]
+position = Vector2(241, 98)
