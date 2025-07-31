@@ -192,4 +192,4 @@ position = Vector2(0, -32)
 position = Vector2(5, -72)
 
 [node name="pushBox2" parent="." instance=ExtResource("8_v158k")]
-position = Vector2(50, -66)
+position = Vector2(50, -75)
