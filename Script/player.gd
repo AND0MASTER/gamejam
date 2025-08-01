@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 	#RESET
 	if Input.is_action_just_pressed("reset") and is_on_floor():
 		get_tree().reload_current_scene()
+		AutoLoadedScript.key = false
 		AutoLoadedScript.SIZE = 1
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -49,6 +50,8 @@ func _physics_process(delta: float) -> void:
 		#climbing
 	if is_on_ladder && Input.is_action_pressed("jump") && ray_cast_wall.is_colliding():
 			velocity.y = -50
+	if Input.is_action_just_pressed("Escape"):
+		get_tree().change_scene_to_file("res://Scenes/level_selector.tscn")
 			
 	
 	move_and_slide()
