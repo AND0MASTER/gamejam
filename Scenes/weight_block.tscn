@@ -1,7 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://beltlk3upgpw8"]
+[gd_scene load_steps=7 format=3 uid="uid://beltlk3upgpw8"]
 
 [ext_resource type="Script" uid="uid://c068h86swtdwj" path="res://Script/weight_block.gd" id="1_ix8yr"]
 [ext_resource type="Texture2D" uid="uid://dxqsgx2flgp6h" path="res://Assets/weightPlatform.png" id="2_gv7dk"]
+[ext_resource type="Texture2D" uid="uid://kpe6l4ocexyj" path="res://Assets/weightPlatformCracked.png" id="3_gv7dk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gv7dk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gv7dk")
+}],
+"loop": true,
+"name": &"cracked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gv7dk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40g0l"]
 size = Vector2(32, 18)
@@ -12,8 +32,8 @@ size = Vector2(32, 4)
 [node name="weightBlock" type="Node2D"]
 script = ExtResource("1_ix8yr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_gv7dk")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gv7dk")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -29,8 +49,10 @@ position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_vton7")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.5
 one_shot = true
 
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="ready" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_ready"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
