@@ -162,7 +162,7 @@ position = Vector2(471, -351)
 
 [node name="Player" parent="." instance=ExtResource("2_hewxp")]
 visibility_layer = 512
-position = Vector2(120, -416)
+position = Vector2(21, 97)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)
