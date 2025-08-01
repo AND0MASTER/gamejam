@@ -268,7 +268,7 @@ position = Vector2(648, 103)
 
 [node name="Player" parent="." instance=ExtResource("2_tj4sd")]
 visibility_layer = 512
-position = Vector2(342, 161)
+position = Vector2(-410, -366)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)
