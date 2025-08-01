@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 		if !ray_cast_small.is_colliding():
 			AutoLoadedScript.SIZE = 1
 	#RESET
-	if Input.is_action_just_pressed("reset") and is_on_floor():
+	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
 		AutoLoadedScript.key = false
 		AutoLoadedScript.SIZE = 1
