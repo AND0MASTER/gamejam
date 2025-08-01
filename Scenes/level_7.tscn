@@ -1,9 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvcs884nvymgk"]
+[gd_scene load_steps=12 format=3 uid="uid://bvcs884nvymgk"]
 
 [ext_resource type="Texture2D" uid="uid://buycd6cn8vue8" path="res://Assets/shrinkingFileSet.png" id="1_3fthp"]
 [ext_resource type="PackedScene" uid="uid://vgfjb3roo1xx" path="res://Scenes/player.tscn" id="2_hewxp"]
+[ext_resource type="PackedScene" uid="uid://cwf5iilqana32" path="res://Scenes/spike.tscn" id="2_ppxtb"]
+[ext_resource type="PackedScene" uid="uid://beltlk3upgpw8" path="res://Scenes/weight_block.tscn" id="3_7e1oo"]
 [ext_resource type="PackedScene" uid="uid://dedp7gs35pv3v" path="res://Scenes/killzone.tscn" id="3_ppxtb"]
 [ext_resource type="PackedScene" uid="uid://ctvepsm4qbnfr" path="res://Scenes/door.tscn" id="4_7e1oo"]
+[ext_resource type="PackedScene" uid="uid://xm1mk3nl7snj" path="res://Scenes/potion.tscn" id="4_vpjpy"]
+[ext_resource type="PackedScene" uid="uid://cknp80mwwva0" path="res://Scenes/push_box.tscn" id="5_hewxp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpjpy"]
 texture = ExtResource("1_3fthp")
@@ -20,8 +24,11 @@ texture_region_size = Vector2i(32, 32)
 0:2/0 = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9857, 15.9967, 15.9857, -15.9967, -16.0078, -16.0409, -16.0008, 16.0142)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.029, -7.00359, 15.9643, -7.03594, 15.9836, 6.969, -15.9031, 7.02029)
 2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.029, -7.00359, 15.9643, -7.03594, 15.9836, 6.969, -15.9031, 7.02029)
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.029, -7.00359, 15.9643, -7.03594, 15.9836, 6.969, -15.9031, 7.02029)
 4:1/0 = 0
 4:2/0 = 0
 4:3/0 = 0
@@ -59,17 +66,90 @@ tile_set = SubResource("TileSet_38lld")
 rendering_quadrant_size = 32
 format = 2
 layer_0/name = "Back"
+layer_0/tile_data = PackedInt32Array(-1638375, 458752, 3, -1638373, 458752, 3, -1638371, 458752, 3, -1769443, 458752, 3, -1769445, 458752, 3, -1769447, 458752, 3, -1900519, 458752, 3, -1900517, 458752, 3, -1900515, 458752, 3, -2031591, 458752, 2, -2031587, 458752, 2, -1966053, 458752, 2, -1507323, 262144, 3, -1638395, 262144, 2, -1507317, 262144, 3, -1638389, 262144, 2, -1769454, 262144, 2, -1638382, 262144, 2, -1507310, 262144, 3, -327681, 458752, 3, -393215, 458752, 3, -393213, 458752, 3, -393211, 458752, 3, -393209, 458752, 3, -393207, 458752, 3, -393205, 458752, 3, -393203, 458752, 3, -393201, 458752, 3, -393199, 458752, 3, -196609, 393216, 1610612739, -262143, 393216, 1610612739, -262141, 393216, 1610612739, -262139, 393216, 1610612739, -262137, 393216, 1610612739, -262135, 393216, 1610612739, -262133, 393216, 1610612739, -262131, 393216, 1610612739, -262129, 393216, 1610612739, -262127, 393216, 1610612739)
 layer_1/name = "Decor"
+layer_1/tile_data = PackedInt32Array(262143, 327680, 7, -1834981, 65536, 6)
 layer_2/name = "Blocks"
+layer_2/tile_data = PackedInt32Array(327685, 65536, 1, 327687, 65536, 1, 327689, 65536, 1, 327691, 65536, 1, 327693, 65536, 1, 327695, 65536, 1, 327697, 65536, 1, 327683, 65536, 1, 327699, 0, 1, 65543, 65536, 1, 65541, 65536, 1, 196627, 0, 1, 65555, 0, 1, -65517, 65536, 1, 327681, 65536, 1, 393215, 65536, 1, 393213, 0, 1, 262141, 0, 1, 131069, 0, 1, -3, 0, 1, -131075, 0, 1, -262147, 0, 1, 524285, 0, 2, 524287, 0, 2, 458753, 0, 2, 458755, 0, 2, 458757, 0, 2, 458759, 0, 2, 458761, 0, 2, 458763, 0, 2, 458765, 0, 2, 458767, 0, 2, 458769, 0, 2, 458771, 0, 2, 65557, 65536, 1, 196629, 0, 1, 327701, 0, 1, -196581, 65536, 1, -196579, 0, 1, -327651, 0, 1, 458773, 0, 2, 458775, 0, 2, 458777, 0, 2, 458779, 0, 2, 458781, 0, 2, 458783, 0, 2, -327661, 0, 2, -458733, 0, 1, -589805, 0, 1, -720877, 0, 1, -851949, 0, 1, -458723, 65536, 1, -720873, 65536, 1, -720875, 65536, 1, 196631, 65536, 1, 196633, 65536, 1, 327707, 0, 1, 196635, 0, 1, 65563, 0, 1, -65509, 0, 1, 327705, 0, 1, 327703, 0, 1, -65507, 0, 1, 65565, 0, 1, 196637, 0, 1, 327709, 0, 1, -589793, 0, 1, -720865, 0, 1, -851937, 0, 1, -458721, 0, 1, -327649, 0, 1, -196577, 0, 1, -65505, 0, 1, 65567, 0, 1, 327711, 0, 1, 196639, 0, 1, -983021, 65536, 1, -983009, 0, 1, -1114081, 0, 1, -1245153, 0, 1, -1245163, 0, 2, -1245165, 0, 2, -393219, 0, 1, -524291, 0, 1, -655363, 0, 1, -786435, 0, 1, -917507, 0, 1, -1048579, 0, 1, -1179651, 65536, 1, -524289, 65536, 1, -589823, 65536, 1, -589821, 65536, 1, -589819, 65536, 1, -589817, 65536, 1, -589813, 0, 1, -589811, 65536, 1, -589809, 65536, 1, -589807, 65536, 1, -983029, 65536, 1, -851957, 0, 1, -720885, 0, 1, -524271, 0, 2, -524273, 0, 2, -524275, 0, 2, -524277, 0, 2, -524279, 0, 2, -524281, 0, 2, -524283, 0, 2, -524285, 0, 2, -524287, 0, 2, -458753, 0, 2, -589803, 0, 1, -589801, 0, 2, -1245161, 0, 2, -1245159, 0, 2, -1245157, 0, 1, -917495, 65536, 1, -786423, 0, 1, -655351, 0, 1, -589815, 0, 1, -1245167, 0, 2, -1245169, 0, 2, -1245171, 0, 2, -1245173, 0, 2, -1245175, 0, 2, -1048570, 131072, 2, -983037, 131072, 2, -1245177, 0, 2, -1245179, 0, 2, -1245181, 0, 2, -1245183, 0, 2, -1179653, 0, 1, -1310725, 0, 1, -1441797, 0, 1, -1572869, 0, 1, -1703941, 0, 1, -1048581, 131072, 805306369, -983041, 131072, 3, -1048576, 65536, 268435459, -1441793, 65536, 1, -1638399, 65536, 1, -1376255, 0, 1, -1507327, 0, 1, -1900543, 0, 1, -2031615, 0, 1, -1835013, 0, 1, -1966085, 0, 1, -2162687, 0, 0, -2097157, 0, 0, -1507325, 65536, 1, -1376253, 0, 1, -1376225, 0, 1, -1507297, 0, 1, -1638369, 0, 1, -1769441, 0, 1, -1900513, 0, 1, -2031585, 0, 1, -2162657, 0, 1, -1769449, 0, 1, -1900521, 0, 1, -2031593, 0, 1, -1507303, 65536, 1, -1507301, 65536, 1, -1507299, 65536, 1, -1376233, 0, 1, -1376231, 0, 1, -1376229, 0, 1, -1376227, 0, 1, -1572841, 65536, 1, -1441769, 0, 1, -1376251, 65536, 1, -1376249, 65536, 1, -1376247, 65536, 1, -1376245, 65536, 1, -1376243, 65536, 1, -1376241, 65536, 1, -1376239, 65536, 1, -1376235, 65536, 1, -2293737, 0, 1, -2293729, 0, 1, -2162665, 0, 1, -1769467, 65536, 1, -1769462, 65536, 1, -1769460, 65536, 1, -1376237, 65536, 1, -2031600, 65536, 1, -1900526, 65536, 1, -1900524, 65536, 1, -1900528, 131072, 805306369, -2424809, 0, 1, -2424801, 0, 1, -2555881, 0, 0, -2555873, 0, 0, -458731, 131072, 536870913, -1114085, 131072, 805306369, -983011, 131072, 805306369, -1114083, 0, 1, -1245155, 0, 1)
 
-[node name="Player" parent="." instance=ExtResource("2_hewxp")]
-visibility_layer = 512
-position = Vector2(183, 97)
+[node name="Boxes" type="Label" parent="."]
+offset_left = 48.0
+offset_top = -20.0
+offset_right = 233.0
+offset_bottom = 55.0
+scale = Vector2(0.510875, 0.494713)
+text = "Boxes can be pushed
+But only when you're
+a normal size"
+horizontal_alignment = 1
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(1, 0)
-zoom = Vector2(2, 2)
-limit_bottom = 205
+[node name="spikes" type="Node" parent="."]
+
+[node name="spike" parent="spikes" instance=ExtResource("2_ppxtb")]
+position = Vector2(375, 65)
+
+[node name="spike2" parent="spikes" instance=ExtResource("2_ppxtb")]
+position = Vector2(407, 65)
+
+[node name="spike3" parent="spikes" instance=ExtResource("2_ppxtb")]
+position = Vector2(343, -159)
+
+[node name="spike4" parent="spikes" instance=ExtResource("2_ppxtb")]
+position = Vector2(279, -127)
+
+[node name="spike5" parent="spikes" instance=ExtResource("2_ppxtb")]
+position = Vector2(247, -127)
+
+[node name="spike6" parent="spikes" instance=ExtResource("2_ppxtb")]
+position = Vector2(215, -127)
+
+[node name="spike9" parent="spikes" instance=ExtResource("2_ppxtb")]
+position = Vector2(119, -127)
+
+[node name="spike10" parent="spikes" instance=ExtResource("2_ppxtb")]
+position = Vector2(87, -127)
+
+[node name="spike11" parent="spikes" instance=ExtResource("2_ppxtb")]
+position = Vector2(55, -127)
+
+[node name="spike12" parent="spikes" instance=ExtResource("2_ppxtb")]
+position = Vector2(23, -127)
+
+[node name="spike13" parent="spikes" instance=ExtResource("2_ppxtb")]
+position = Vector2(-9, -127)
+
+[node name="spike7" parent="spikes" instance=ExtResource("2_ppxtb")]
+position = Vector2(295, -447)
+
+[node name="weight blocks" type="Node" parent="."]
+
+[node name="weightBlock" parent="weight blocks" instance=ExtResource("3_7e1oo")]
+position = Vector2(279, -191)
+
+[node name="weightBlock2" parent="weight blocks" instance=ExtResource("3_7e1oo")]
+position = Vector2(247, -191)
+
+[node name="weightBlock3" parent="weight blocks" instance=ExtResource("3_7e1oo")]
+position = Vector2(215, -191)
+
+[node name="boxes" type="Node" parent="."]
+
+[node name="pushBox" parent="boxes" instance=ExtResource("5_hewxp")]
+position = Vector2(119, 33)
+
+[node name="pushBox2" parent="boxes" instance=ExtResource("5_hewxp")]
+position = Vector2(279, -223)
+
+[node name="pushBox3" parent="boxes" instance=ExtResource("5_hewxp")]
+position = Vector2(196, -415)
+
+[node name="Potions" type="Node" parent="."]
+
+[node name="Potion2" parent="Potions" instance=ExtResource("4_vpjpy")]
+position = Vector2(328, -448)
+
+[node name="Potion" parent="Potions" instance=ExtResource("4_vpjpy")]
+position = Vector2(160, -223)
 
 [node name="Killzone" parent="." instance=ExtResource("3_ppxtb")]
 position = Vector2(278, 231)
@@ -78,4 +158,13 @@ position = Vector2(278, 231)
 shape = SubResource("WorldBoundaryShape2D_nlfqy")
 
 [node name="door" parent="." instance=ExtResource("4_7e1oo")]
-position = Vector2(241, 98)
+position = Vector2(439, -351)
+
+[node name="Player" parent="." instance=ExtResource("2_hewxp")]
+visibility_layer = 512
+position = Vector2(22, 97)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1, 0)
+zoom = Vector2(2, 2)
+limit_bottom = 205
