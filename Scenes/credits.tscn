@@ -1,0 +1,175 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjbwuyts7j0xj"]
+
+[ext_resource type="Script" uid="uid://dpx4xr8x273b6" path="res://credits.gd" id="1_gryuy"]
+[ext_resource type="Texture2D" uid="uid://buycd6cn8vue8" path="res://Assets/shrinkingFileSet.png" id="1_r18jl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gryuy"]
+texture = ExtResource("1_r18jl")
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:2/size_in_atlas = Vector2i(2, 2)
+0:2/0 = 0
+2:2/size_in_atlas = Vector2i(2, 2)
+2:2/0 = 0
+4:2/size_in_atlas = Vector2i(2, 2)
+4:2/0 = 0
+0:4/size_in_atlas = Vector2i(2, 2)
+0:4/0 = 0
+14:6/size_in_atlas = Vector2i(2, 2)
+14:6/0 = 0
+8:5/size_in_atlas = Vector2i(2, 2)
+8:5/0 = 0
+14:4/size_in_atlas = Vector2i(2, 2)
+14:4/0 = 0
+12:4/size_in_atlas = Vector2i(2, 2)
+12:4/0 = 0
+12:6/size_in_atlas = Vector2i(2, 2)
+12:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ccovl"]
+sources/0 = SubResource("TileSetAtlasSource_gryuy")
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gryuy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1500, 800)
+offset_right = 1500.0
+offset_bottom = 800.0
+color = Color(0.128606, 0.424199, 0.898313, 1)
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_ccovl")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(196616, 786432, 4, 327688, 786432, 6, 458760, 786432, 6, 589832, 786432, 6, 720904, 786432, 6, 851976, 786432, 6, 196618, 917504, 4, 327690, 917504, 6, 458762, 917504, 6, 589834, 917504, 6, 720906, 917504, 6, 851978, 917504, 6, 983050, 131072, 2, 1114122, 262144, 805306370, 262156, 917504, 4, 327692, 917504, 6, 458764, 917504, 6, 589836, 917504, 6, 720908, 917504, 6, 851980, 917504, 6, 983052, 131072, 2, 1114124, 0, 2, 196622, 917504, 4, 327694, 917504, 6, 458766, 917504, 6, 589838, 917504, 6, 720910, 917504, 6, 851982, 917504, 6, 983054, 131072, 2, 1114126, 262144, 536870914, 196624, 786432, 268435460, 327696, 786432, 268435462, 458768, 786432, 268435462, 589840, 786432, 268435462, 720912, 786432, 268435462, 851984, 786432, 268435462, 458774, 786432, 4, 589846, 786432, 6, 720918, 786432, 6, 851990, 786432, 6, 458776, 917504, 4, 589848, 917504, 6, 720920, 917504, 6, 851992, 917504, 6, 983064, 131072, 2, 1114136, 524288, 5, 1245208, 524288, 5, 458778, 917504, 4, 589850, 917504, 6, 720922, 917504, 6, 851994, 917504, 6, 983066, 131072, 2, 458780, 917504, 4, 589852, 917504, 6, 720924, 917504, 6, 851996, 917504, 6, 983068, 131072, 2, 1114140, 524288, 5, 1245212, 524288, 5, 458782, 786432, 268435460, 589854, 786432, 268435462, 720926, 786432, 268435462, 851998, 786432, 268435462, 983062, 262144, 805306370, 983070, 262144, 536870914, 1245196, 524288, 5)
+layer_1/name = "Layer1"
+layer_1/tile_data = PackedInt32Array(720906, 393216, 10, 786442, 393216, 11, 720907, 458752, 10, 786443, 458752, 11, 720909, 393216, 12, 786445, 393216, 13, 720910, 458752, 12, 786446, 458752, 13, 786456, 262144, 12, 851992, 262144, 13, 786457, 327680, 12, 851993, 327680, 13, 786459, 262144, 10, 851995, 262144, 11, 786460, 327680, 10, 851996, 327680, 11)
+
+[node name="Return" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 75)
+offset_left = 52.0
+offset_top = 545.0
+offset_right = 145.0
+offset_bottom = 584.0
+scale = Vector2(0.89863, 0.90671)
+theme_override_font_sizes/font_size = 30
+text = "Return"
+
+[node name="Text1" type="Label" parent="."]
+offset_left = 330.0
+offset_top = 149.0
+offset_right = 606.0
+offset_bottom = 224.0
+scale = Vector2(0.510875, 0.494713)
+theme_override_font_sizes/font_size = 50
+text = "Created by:"
+horizontal_alignment = 1
+
+[node name="Text2" type="Label" parent="."]
+offset_left = 316.0
+offset_top = 214.0
+offset_right = 648.0
+offset_bottom = 289.0
+scale = Vector2(0.510875, 0.494713)
+theme_override_font_sizes/font_size = 50
+text = "AND0MASTER"
+horizontal_alignment = 1
+
+[node name="Text3" type="Label" parent="."]
+offset_left = 316.0
+offset_top = 241.0
+offset_right = 648.0
+offset_bottom = 316.0
+scale = Vector2(0.510875, 0.494713)
+theme_override_font_sizes/font_size = 50
+text = "&"
+horizontal_alignment = 1
+
+[node name="Text4" type="Label" parent="."]
+offset_left = 316.0
+offset_top = 268.0
+offset_right = 648.0
+offset_bottom = 343.0
+scale = Vector2(0.510875, 0.494713)
+theme_override_font_sizes/font_size = 50
+text = "Headless
+Hatter"
+horizontal_alignment = 1
+
+[node name="Text5" type="Label" parent="."]
+offset_left = 763.0
+offset_top = 262.0
+offset_right = 1095.0
+offset_bottom = 337.0
+scale = Vector2(0.510875, 0.494713)
+theme_override_font_sizes/font_size = 50
+text = "For the:"
+horizontal_alignment = 1
+
+[node name="Text6" type="Label" parent="."]
+offset_left = 764.0
+offset_top = 307.0
+offset_right = 1096.0
+offset_bottom = 448.0
+scale = Vector2(0.510875, 0.494713)
+theme_override_font_sizes/font_size = 50
+text = "Little guy
+game jam #1"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
