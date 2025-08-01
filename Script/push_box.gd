@@ -9,7 +9,7 @@ extends Node2D
 
 func _process(delta: float) -> void:
 	if not ray_cast_right.is_colliding() && not ray_cast_left.is_colliding():
-		position.y += 1
+		position.y += 2
 
 func _on_area_right_body_entered(body: Node2D) -> void:
 	if AutoLoadedScript.pushing && not ray_cast_clo_left.is_colliding() && not ray_cast_clo_left_2.is_colliding():
